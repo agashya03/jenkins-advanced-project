@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">Cine<span>Book</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#booking">Book Tickets</a>
+        </nav>
+
+        <input type="text" id="searchInput"
+               placeholder="Search movies...">
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Experience Movies Like Never Before</h1>
+            <p>Book your favourite movie tickets in seconds.</p>
+            <a href="#movies" class="btn">Explore Movies</a>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies" id="movies">
+        <h2>Now Showing</h2>
+
+        <div class="movie-container" id="movieContainer">
+
+            <div class="movie-card" data-title="Avengers">
+                <img src="https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg">
+                <h3>Avengers</h3>
+                <p>Action | Sci-Fi</p>
+                <p>⭐ 8.4/10</p>
+                <button onclick="selectMovie('Avengers')">Book Now</button>
+            </div>
+
+            <div class="movie-card" data-title="Inception">
+                <img src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg">
+                <h3>Inception</h3>
+                <p>Action | Thriller</p>
+                <p>⭐ 8.8/10</p>
+                <button onclick="selectMovie('Inception')">Book Now</button>
+            </div>
+
+            <div class="movie-card" data-title="Interstellar">
+                <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg">
+                <h3>Interstellar</h3>
+                <p>Sci-Fi | Drama</p>
+                <p>⭐ 8.7/10</p>
+                <button onclick="selectMovie('Interstellar')">Book Now</button>
+            </div>
+
+            <div class="movie-card" data-title="Joker">
+                <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg">
+                <h3>Joker</h3>
+                <p>Drama | Thriller</p>
+                <p>⭐ 8.2/10</p>
+                <button onclick="selectMovie('Joker')">Book Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+
+        <h2>Book Your Tickets</h2>
+
+        <div class="booking-form">
+
+            <label>Select Movie</label>
+            <select id="movieSelect">
+                <option value="">Choose a Movie</option>
+                <option value="Avengers">Avengers</option>
+                <option value="Inception">Inception</option>
+                <option value="Interstellar">Interstellar</option>
+                <option value="Joker">Joker</option>
+            </select>
+
+            <label>Select Theatre</label>
+            <select id="theatre">
+                <option value="PVR Cinemas">PVR Cinemas</option>
+                <option value="INOX">INOX</option>
+                <option value="AGS Cinemas">AGS Cinemas</option>
+            </select>
+
+            <label>Select Date</label>
+            <input type="date" id="date">
+
+            <label>Select Show Time</label>
+            <select id="showTime">
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="1:30 PM">1:30 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="9:30 PM">9:30 PM</option>
+            </select>
+
+            <h3>Select Your Seats</h3>
+
+            <div class="screen">SCREEN THIS WAY</div>
+
+            <div class="seats" id="seats">
+                <!-- Generated using JavaScript -->
+            </div>
+
+            <div class="seat-info">
+                <span>🟩 Available</span>
+                <span>🟥 Selected</span>
+                <span>⬜ Booked</span>
+            </div>
+
+            <div class="summary">
+                <p>Selected Seats: <span id="selectedSeats">0</span></p>
+                <p>Total Amount: ₹<span id="totalPrice">0</span></p>
+            </div>
+
+            <button class="confirm-btn" onclick="confirmBooking()">
+                Confirm Booking
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CineBook. All Rights Reserved.</p>
+        <p>Your Movie, Your Experience.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
